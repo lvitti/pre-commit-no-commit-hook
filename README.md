@@ -1,5 +1,5 @@
 # pre-commit-no-commit-hook
-Verify if committed file has some line with comment "no-commit"
+Verify if committed file has some line with comment "#no-commit#"
 
 
 Add this to your `.pre-commit-config.yaml`
