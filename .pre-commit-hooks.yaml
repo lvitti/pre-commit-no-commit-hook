@@ -1,6 +1,6 @@
 - id: no-commit
   name: no-commit
   description: Verify if committed files has some line with comment "no-commit"
-  entry: sh no-commit.sh
+  entry: sh ./no-commit.sh
   language: system
   type: [text]

@@ -1,4 +1,7 @@
+#!/bin/bash
+
 # https://stackoverflow.com/a/20574486/3041568
+
 noCommitCount=$(git diff --no-ext-diff --cached | egrep -i --count "(@No|\/\/\s?no[ -]?)commit")
 if [ "$noCommitCount" -ne "0" ]; then
    echo "WARNING: You are attempting to commit changes which include a 'no-commit'."
