@@ -1,12 +1,10 @@
 #!/bin/bash
 
-# https://stackoverflow.com/a/20574486/3041568
-
-noCommitCount=$(git diff --no-ext-diff | egrep -i --count "#no-commit#")
+noCommitCount=$(grep -ow $1 -e '#no-commit#' | wc -l)
 if [ "$noCommitCount" -ne "0" ]; then
    echo "WARNING: You are attempting to commit changes which include a '#no-commit#'."
    echo "Please check the following files:"
-   git diff --no-ext-diff --name-only -i -G"#no-commit#" | sed 's/^/   - /'
+   echo $1
    echo
    echo "You can ignore this warning by running the commit command with '--no-verify'"
    exit 1
